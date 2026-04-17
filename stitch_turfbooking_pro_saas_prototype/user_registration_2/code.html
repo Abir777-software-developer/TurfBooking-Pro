@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#006437",
+                        "surface-dim": "#0b0e14",
+                        "on-primary-fixed-variant": "#006638",
+                        "background": "#0b0e14",
+                        "tertiary-fixed-dim": "#d97dff",
+                        "on-tertiary-fixed-variant": "#600083",
+                        "on-secondary-fixed": "#003a48",
+                        "on-secondary-fixed-variant": "#00586d",
+                        "surface-container": "#161a21",
+                        "surface-bright": "#282c36",
+                        "surface-container-high": "#1c2028",
+                        "surface": "#0b0e14",
+                        "on-primary-fixed": "#004624",
+                        "error": "#ff716c",
+                        "inverse-primary": "#006e3c",
+                        "secondary-container": "#00677f",
+                        "inverse-surface": "#f9f9ff",
+                        "on-surface-variant": "#a9abb3",
+                        "on-primary-container": "#005b31",
+                        "tertiary-fixed": "#e192ff",
+                        "surface-container-low": "#10131a",
+                        "error-dim": "#d7383b",
+                        "on-surface": "#ecedf6",
+                        "secondary-fixed-dim": "#37d4ff",
+                        "primary-fixed-dim": "#00ed89",
+                        "on-tertiary": "#390050",
+                        "outline": "#73757d",
+                        "primary-fixed": "#00fd93",
+                        "secondary-fixed": "#80deff",
+                        "tertiary": "#d674ff",
+                        "on-secondary": "#004050",
+                        "tertiary-container": "#be0dff",
+                        "on-tertiary-container": "#000000",
+                        "tertiary-dim": "#bb00fc",
+                        "surface-container-highest": "#22262f",
+                        "secondary": "#00cffc",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-fixed": "#2c003f",
+                        "on-background": "#ecedf6",
+                        "on-error": "#490006",
+                        "primary-dim": "#00ed89",
+                        "surface-variant": "#22262f",
+                        "outline-variant": "#45484f",
+                        "surface-tint": "#a2ffbf",
+                        "error-container": "#9f0519",
+                        "secondary-dim": "#00c0ea",
+                        "on-error-container": "#ffa8a3",
+                        "inverse-on-surface": "#52555c",
+                        "primary-container": "#00fd93",
+                        "primary": "#a2ffbf",
+                        "on-secondary-container": "#eef9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel {
+            background: rgba(34, 38, 47, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .neumorphic-inset {
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -1px -1px 2px rgba(255,255,255,0.05);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #a2ffbf 0%, #00cffc 100%);
+        }
+        .antigravity-float {
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+        }
+        .ghost-border {
+            outline: 1px solid rgba(69, 72, 79, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary min-h-screen overflow-x-hidden flex flex-col">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b0e14] to-transparent">
+<nav class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black text-primary tracking-tighter uppercase font-headline">
+                TurfBooking Pro
+            </div>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase font-bold">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Find Turf</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Leagues</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-full glass-panel ghost-border text-xs font-bold font-headline uppercase tracking-widest text-on-surface hover:bg-surface-variant transition-all">
+                    Sign In
+                </button>
+</div>
+</nav>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex items-center justify-center relative px-6 py-24 overflow-hidden">
+<!-- Dynamic Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<!-- Orbital Blurs -->
+<div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-secondary/5 rounded-full blur-[160px]"></div>
+<!-- Floating Antigravity Elements -->
+<div class="absolute top-[20%] left-[10%] rotate-12 opacity-40 md:opacity-100">
+<div class="w-32 h-32 relative antigravity-float">
+<img class="w-full h-full object-contain rounded-full shadow-2xl shadow-primary/20" data-alt="3D render of a futuristic glowing green football soccer ball floating in dark space with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJPA7ZofLgwhgjmTmzMLGV3XOv7Zi2-0evuWAst7xrzCGA9QRrbGE7LXgRwYSZ6Rmszj_DYDq2DTaszE-YbxJqQdBTFZ19Dp7-pJgHSPbEMzGpfYUgvVlBc2ZX1MksihY67OVN6kVyYraCMlZw9-8WqA-xDRe9n1KRjvaIHtZVNxn43jxCXTFkwc0I0UqCJH-Cbh2W6-Wz85rX-wUD1hQoxYLBbiKvnzeFrJiO0x20A1EySmtDJJQWwaFVCBP6wYPrnT4tM7_Qxco"/>
+</div>
+</div>
+<div class="absolute bottom-[15%] right-[15%] -rotate-12 opacity-30 md:opacity-100">
+<div class="w-24 h-24 relative antigravity-float">
+<img class="w-full h-full object-cover rounded-full ghost-border" data-alt="close-up of stadium turf textures with subtle light reflecting off the synthetic grass in a dark atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7J2voiIOz3zxYB2cXXI7lQh1vxscsHVKnwF65yVuZ7L4ynORa-_rlvYLBvSEC5L06w6uGl9Xrgq_Gvegqkk7PjxGc_EWl_zeGuh31KKRRWHXq6TJH0lmu92p5jFrTkAYOspklA8EtXtEkVyEOrVq-JAq1wAf3n9NbLdrAk3r9xmwbbwc5TvMmpHOTpmDpUu6o3EoVVdLqWgikL2F1lml3mf33v5K-gj3AnlQ-7AAAzxcS18MvMtqHX__TN60j7hh7y1-RLETS8Cg"/>
+</div>
+</div>
+<div class="absolute top-[60%] left-[5%] rotate-45 opacity-20 hidden lg:block">
+<div class="w-16 h-16 bg-tertiary/20 rounded-xl backdrop-blur-md ghost-border"></div>
+</div>
+<div class="absolute bottom-[30%] left-[15%] -rotate-12 opacity-30 md:opacity-60">
+<div class="w-20 h-20 glass-panel rounded-full flex items-center justify-center ghost-border antigravity-float">
+<span class="material-symbols-outlined text-4xl text-primary/40">sports_cricket</span>
+</div>
+</div><div class="absolute top-[15%] right-[20%] rotate-12 opacity-30 md:opacity-60">
+<div class="w-24 h-24 glass-panel rounded-full flex items-center justify-center ghost-border antigravity-float">
+<span class="material-symbols-outlined text-5xl text-secondary/40">sports_basketball</span>
+</div>
+</div><div class="absolute top-[50%] right-[5%] -rotate-45 opacity-20 md:opacity-50">
+<div class="w-16 h-16 glass-panel rounded-full flex items-center justify-center ghost-border antigravity-float">
+<span class="material-symbols-outlined text-3xl text-tertiary/40">sports_tennis</span>
+</div>
+</div><div class="absolute top-[40%] left-[25%] rotate-45 opacity-20 md:opacity-40">
+<div class="w-14 h-14 glass-panel rounded-full flex items-center justify-center ghost-border antigravity-float">
+<span class="material-symbols-outlined text-2xl text-primary/30">sports_volleyball</span>
+</div>
+</div></div>
+<!-- Registration Card (The Kinetic Void Shell) -->
+<div class="z-10 w-full max-w-lg">
+<div class="glass-panel ghost-border rounded-[2rem] p-8 md:p-12 shadow-2xl shadow-black/40 relative overflow-hidden">
+<!-- Branding Accent -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 kinetic-gradient"></div>
+<div class="mb-10 text-center">
+<span class="text-tertiary font-bold text-[0.65rem] tracking-[0.3em] uppercase mb-4 block">Player Registration</span>
+<h1 class="text-4xl md:text-5xl font-black font-headline tracking-tighter text-on-surface leading-tight">
+                        ENTER THE <br/><span class="text-primary italic">KINETIC VOID.</span>
+</h1>
+</div>
+<form class="space-y-6">
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="block text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant px-1">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-sm">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-outline/40 neumorphic-inset focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container-low transition-all duration-300" placeholder="Cristiano Ronaldo" type="text"/>
+</div>
+</div>
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="block text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant px-1">E-Mail Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-sm">alternate_email</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-outline/40 neumorphic-inset focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container-low transition-all duration-300" placeholder="striker@pitch.pro" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Phone Input -->
+<div class="space-y-2">
+<label class="block text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant px-1">Mobile Phone</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-sm">smartphone</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-outline/40 neumorphic-inset focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container-low transition-all duration-300" placeholder="+1 (555) 000-000" type="tel"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<label class="block text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant px-1">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-sm">lock</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-outline/40 neumorphic-inset focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container-low transition-all duration-300" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Terms Toggle -->
+<div class="flex items-center gap-3 pt-2">
+<input class="w-5 h-5 rounded-md bg-surface-container border-none text-primary focus:ring-primary/20" id="terms" type="checkbox"/>
+<label class="text-xs text-on-surface-variant leading-snug" for="terms">
+                            I accept the <a class="text-secondary hover:underline" href="#">Player Terms</a> and the Kinetic Void <a class="text-secondary hover:underline" href="#">Privacy Code</a>.
+                        </label>
+</div>
+<!-- CTA -->
+<button class="w-full kinetic-gradient py-5 rounded-full text-on-primary font-black font-headline text-sm uppercase tracking-[0.2em] shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group" type="submit">
+                        Join as Player
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<div class="mt-10 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-xs text-on-surface-variant">
+                        Already have an athlete profile? <a class="text-primary font-bold hover:underline" href="#">Log In Here</a>
+</p>
+</div>
+</div>
+<!-- Footer Meta (Shared Component Hook) -->
+<div class="mt-8 flex justify-between px-4 text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant opacity-50">
+<span>EST. 2024</span>
+<span>SECURE ENCRYPTED PORTAL</span>
+</div>
+</div>
+</main>
+<!-- Navigation Shell Support (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full glass-panel z-50 py-3 px-6 flex justify-between items-center">
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="text-[10px] font-bold">Find Turf</span>
+</div>
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold">Leagues</span>
+</div>
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">person_add</span>
+<span class="text-[10px] font-bold">Join</span>
+</div>
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">help</span>
+<span class="text-[10px] font-bold">Support</span>
+</div>
+</nav>
+<!-- Footer (Shared Component Rule) -->
+<footer class="w-full bg-[#10131a] border-t border-[#22262f]/10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold text-primary font-headline uppercase">TurfBooking Pro</div>
+<div class="flex gap-8 text-xs text-[#a9abb3] font-body uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Partner with Us</a>
+<a class="hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="text-xs text-[#a9abb3] font-body">
+                © 2024 TurfBooking Pro. The Kinetic Void.
+            </div>
+</div>
+</footer>
+</body></html>

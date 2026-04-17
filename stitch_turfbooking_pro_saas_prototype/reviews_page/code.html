@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reviews | TurfBooking Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary": "#006437",
+                  "surface-dim": "#0b0e14",
+                  "on-primary-fixed-variant": "#006638",
+                  "background": "#0b0e14",
+                  "tertiary-fixed-dim": "#d97dff",
+                  "on-tertiary-fixed-variant": "#600083",
+                  "on-secondary-fixed": "#003a48",
+                  "on-secondary-fixed-variant": "#00586d",
+                  "surface-container": "#161a21",
+                  "surface-bright": "#282c36",
+                  "surface-container-high": "#1c2028",
+                  "surface": "#0b0e14",
+                  "on-primary-fixed": "#004624",
+                  "error": "#ff716c",
+                  "inverse-primary": "#006e3c",
+                  "secondary-container": "#00677f",
+                  "inverse-surface": "#f9f9ff",
+                  "on-surface-variant": "#a9abb3",
+                  "on-primary-container": "#005b31",
+                  "tertiary-fixed": "#e192ff",
+                  "surface-container-low": "#10131a",
+                  "error-dim": "#d7383b",
+                  "on-surface": "#ecedf6",
+                  "secondary-fixed-dim": "#37d4ff",
+                  "primary-fixed-dim": "#00ed89",
+                  "on-tertiary": "#390050",
+                  "outline": "#73757d",
+                  "primary-fixed": "#00fd93",
+                  "secondary-fixed": "#80deff",
+                  "tertiary": "#d674ff",
+                  "on-secondary": "#004050",
+                  "tertiary-container": "#be0dff",
+                  "on-tertiary-container": "#000000",
+                  "tertiary-dim": "#bb00fc",
+                  "surface-container-highest": "#22262f",
+                  "secondary": "#00cffc",
+                  "surface-container-lowest": "#000000",
+                  "on-tertiary-fixed": "#2c003f",
+                  "on-background": "#ecedf6",
+                  "on-error": "#490006",
+                  "primary-dim": "#00ed89",
+                  "surface-variant": "#22262f",
+                  "outline-variant": "#45484f",
+                  "surface-tint": "#a2ffbf",
+                  "error-container": "#9f0519",
+                  "secondary-dim": "#00c0ea",
+                  "on-error-container": "#ffa8a3",
+                  "inverse-on-surface": "#52555c",
+                  "primary-container": "#00fd93",
+                  "primary": "#a2ffbf",
+                  "on-secondary-container": "#eef9ff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "fontFamily": {
+                  "headline": ["Space Grotesk"],
+                  "body": ["Manrope"],
+                  "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; }
+    .headline-font { font-family: 'Space Grotesk', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .pulse-gradient {
+      background: linear-gradient(135deg, #a2ffbf 0%, #00cffc 100%);
+    }
+    .glass-card {
+      background: rgba(34, 38, 47, 0.6);
+      backdrop-filter: blur(24px);
+    }
+    .ghost-border {
+      outline: 1px solid rgba(69, 72, 79, 0.2);
+    }
+    .ghost-border:hover {
+      outline-color: rgba(69, 72, 79, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b0e14] to-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto bg-surface/60 dark:bg-[#161a21]/60 backdrop-blur-xl shadow-2xl shadow-black/20">
+<div class="text-2xl font-black text-[#00FF94] tracking-tighter headline-font">TurfBooking Pro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300" href="#">Find Turf</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300" href="#">Leagues</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#00FF94] border-b-2 border-[#00FF94] pb-1 transition-all duration-300" href="#">Reviews</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all">Sign In</button>
+<button class="pulse-gradient text-on-primary px-6 py-2 rounded-full font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold hover:scale-95 active:scale-90 transition-all duration-300">Book Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto min-h-screen">
+<!-- Hero Header -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-2xl">
+<span class="text-tertiary font-bold tracking-widest text-xs uppercase mb-4 block headline-font">The Kinetic Feed</span>
+<h1 class="text-5xl md:text-7xl headline-font font-extrabold tracking-tighter mb-6 leading-none">
+            PRO <span class="text-transparent bg-clip-text pulse-gradient">INSIGHTS</span>
+</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">
+            Experience the pitch through the eyes of the community. Raw, unedited footage from the fastest turfs in the city.
+          </p>
+</div>
+<!-- Upload Trigger -->
+<div class="w-full md:w-auto">
+<div class="surface-container rounded-xl p-6 ghost-border relative overflow-hidden group">
+<div class="absolute inset-0 pulse-gradient opacity-5"></div>
+<div class="relative z-10 flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">video_call</span>
+<div class="text-center">
+<h3 class="font-bold headline-font uppercase text-sm tracking-widest">Share Your Game</h3>
+<p class="text-xs text-on-surface-variant mt-1">Upload a 30s video review</p>
+</div>
+<button class="w-full py-3 px-8 rounded-full bg-surface-container-highest ghost-border text-primary font-bold headline-font text-xs uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500">
+                Upload Video Review
+              </button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Stats Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+<div class="surface-container-low p-6 rounded-xl ghost-border">
+<div class="text-3xl headline-font font-black text-primary mb-1">4.9/5</div>
+<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold">Avg Pitch Quality</div>
+</div>
+<div class="surface-container-low p-6 rounded-xl ghost-border">
+<div class="text-3xl headline-font font-black text-secondary mb-1">1.2k+</div>
+<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold">Video Reviews</div>
+</div>
+<div class="surface-container-low p-6 rounded-xl ghost-border">
+<div class="text-3xl headline-font font-black text-tertiary mb-1">98%</div>
+<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold">Verified Athletes</div>
+</div>
+<div class="surface-container-low p-6 rounded-xl ghost-border">
+<div class="text-3xl headline-font font-black text-on-surface mb-1">24/7</div>
+<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold">Live Support</div>
+</div>
+</div>
+<!-- Video Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Feature Review (Large) -->
+<div class="md:col-span-8 group relative rounded-3xl overflow-hidden aspect-[16/10] ghost-border surface-container-high transition-transform duration-500 hover:-translate-y-2">
+<img alt="Athletic turf highlights" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="dramatic wide shot of a futuristic indoor soccer field with neon green artificial grass and bright overhead stadium lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7YlYuvDxxaCEzg1vNQxBRM6fJUmajoma8NAa3JhbXe1LIph-sntHQ0SiYgM__RvWid0QwuSwUoRn9oda7ciYcco4zIGn49dJY8uQoDofDLnPXCz8jkzXfjFWqvGwjx_tPI-7wB8x9Qnib5CNklweJatvV4qlC0WyPCr6eYH6u73QDCpQW4LUKytWrndlX6NHr-tKf3JAxptLUYoDgEf2EfmPnCCR1rnH11JyzzxnToxcJ1nh8gDcz6B0fBiFapruUxyQcjVAV8Ec"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<!-- Play Button -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full glass-card border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">play_arrow</span>
+</div>
+</div>
+<!-- Overlay Content -->
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest rounded-full border border-primary/30 backdrop-blur-md">
+              Verified Review
+            </span>
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+</div>
+</div>
+<h2 class="text-3xl headline-font font-bold mb-2">"The lighting at night is insane. Best turf in the district."</h2>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant p-0.5">
+<img class="w-full h-full rounded-full object-cover" data-alt="headshot portrait of a confident young athlete smiling with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOf9pt3qbx9t0ygiMR4jcoAkSMyFBCp1E_bxjbKD5mvSCc74rqvAjTrOXyE4kk0ppRAQKIztPvBNoW2mpN1965_rzjEPAqtBI5GVN6DtQErSoTlzYCjSvaxPHrs7K5qvCzCJZgMX_jcETpq6S3TLh-We1xtOkSP37re4MyktX1SwXLTVB_5-u3pm1gA1QT8MJA2w3cqNDCxLAoHRPwy92IneiX5kvmDm5ctpmPaQa7FJmEG7a5A3y6u5QNcxXCLI9JMxyqrpabYn0"/>
+</div>
+<div>
+<p class="text-sm font-bold headline-font tracking-tight">Marcus V. — Pro Striker</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Turf: Neo-Central Arena</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Review (Vertical) -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="flex-1 glass-card rounded-3xl p-6 ghost-border flex flex-col justify-between group transition-all duration-500 hover:outline-primary/40">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl overflow-hidden ghost-border">
+<img class="w-full h-full object-cover" data-alt="portrait headshot of a male athlete with dark hair and intense eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsC82V3Sg_pxJmfPoUx1HKzaPuKZ58Di8tDE3_tvBOQCJhX1YoKtOusQhyXD-zRNuBUeRryr4GqghdHHjvMkJyse-OB5X19Q96YA_g5WOM_bpPvUGvJqteeFNC2bdQy8CF4ym73u7JEQui0JEL22MBk-hcrLcu1bpPQf1vRSkZQapEXzHQeOZI6BhqFCdLJddNm7iG_RAT0bqmsxmMGX0YKM7BRa3A3y1la3Nt1bh0imYyh3btKYRngnrqu9sweJ-WqWqm0tB3S-Q"/>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">verified</span>
+</div>
+<div class="flex gap-0.5 text-tertiary mb-3">
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">star</span>
+</div>
+<p class="text-sm italic text-on-surface-variant leading-relaxed">
+              "Transitioned from amateur to league play here. The surface density is perfect for reducing joint impact. My go-to spot."
+            </p>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<div class="relative rounded-2xl overflow-hidden aspect-video ghost-border">
+<img class="w-full h-full object-cover opacity-50" data-alt="close up of soccer ball on high quality green turf with blurred stadium lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5KBWAAYwE8-o8mfzPTMdT9SDlM6wkckyasU5suJboedfTxglkl6pvQxCFMXu9ojAQAYZ3K3bfxG-E2XVJzCHwbIj7bc1qsHn75SXfUL5vqvthD7gD_tQqSWuAlG440QmF3xxO0OTikYADgD6o94NtH1S7YUilgzeszclRqE-nRoY3EyFh7BNKKkKXIloVBM_6cC2KnLXTsK5rdFtJHkEOSUUH5buvaU5gyVBNAL2YbxqSkUHvMpbNi8UCVPeXQxZ9ZYeF0uqhQF4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] text-center mt-3 uppercase tracking-widest font-black text-on-surface-variant">Watch Gameplay Clip</p>
+</div>
+</div>
+</div>
+<!-- Grid Row 2 -->
+<div class="md:col-span-4 group relative rounded-3xl overflow-hidden aspect-square ghost-border surface-container-high hover:translate-y-[-8px] transition-all duration-500">
+<img class="w-full h-full object-cover opacity-40" data-alt="dynamic action shot of soccer player feet dribbling on a neon blue lit turf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoXbEYp71tJVHy_NOKDzXJYJqH2NjMMKHEdzKp8HHwm1kCncVEHY4MokOwvBGGz33XDBP4lcboSuoYtt1Xfq0FhtRfszliO_kwvgUxwAi6SJ-Z-LOisRqKsZ5j2D1NSG4OiFhXBRUhbzTGCL2-KmvnosDJQyN5yCv6V_n5hoVjg9ahpPSfwvA519_IsxGHGuAIr_dLzhI_Qd9aYydQ74I0EFHCNbJ0HZmJeRRZynhgH7n2zagGHydyhVVCLgWaI00sHgV-sY3-wo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest to-transparent p-6 flex flex-col justify-end">
+<div class="flex gap-1 text-secondary mb-2">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+</div>
+<h4 class="font-bold headline-font text-lg mb-1">Seamless Booking</h4>
+<p class="text-xs text-on-surface-variant">Review by Sarah K.</p>
+<div class="absolute top-6 right-6 w-10 h-10 rounded-full glass-card flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group relative rounded-3xl overflow-hidden aspect-square ghost-border surface-container-high hover:translate-y-[-8px] transition-all duration-500">
+<img class="w-full h-full object-cover opacity-40" data-alt="overhead view of a vibrant green soccer field with sharp white lines and players in action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCazhyN9nbF-ErPIsgruVYGusCCIET1PFGZxbRs5D3ObeghgVLmMub5Uc6QgVLGKg8IF52AFtwDrpD4_PJcFO_sK5S_-8rEvrZUkqAAgPHz-a-00U_EtzapXqrU99uwb2AuQiUpSipZ8m9xNAQfCxPXAdR5F1HGLlEpo_OCzqDhOAx8aS5n0t9DjW91Ynq2JCEznTyyQrMIi1Tr0TuVDIGxN5nf1zsI05vyQ3ygevYIqAgzrUPayM8yQTpxVgHL3du-nroshdj_D0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest to-transparent p-6 flex flex-col justify-end">
+<div class="flex gap-1 text-primary mb-2">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star_half</span>
+</div>
+<h4 class="font-bold headline-font text-lg mb-1">League Standard</h4>
+<p class="text-xs text-on-surface-variant">Review by David L.</p>
+<div class="absolute top-6 right-6 w-10 h-10 rounded-full glass-card flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-weight="fill">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 surface-container rounded-3xl p-8 ghost-border flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">add_circle</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-3 uppercase tracking-tight">Your Voice Matters</h3>
+<p class="text-sm text-on-surface-variant mb-8 px-4">
+          Join 500+ athletes who shared their experience this month.
+        </p>
+<button class="pulse-gradient text-on-primary px-8 py-3 rounded-full font-bold headline-font text-xs uppercase tracking-widest hover:shadow-[0_0_20px_rgba(162,255,191,0.4)] transition-all">
+          Leave a Review
+        </button>
+</div>
+</div>
+<!-- Live Comment Feed -->
+<section class="mt-32">
+<div class="flex items-center gap-4 mb-10">
+<div class="h-px flex-1 bg-gradient-to-r from-transparent to-outline-variant/30"></div>
+<h2 class="text-sm headline-font font-black uppercase tracking-[0.3em] text-on-surface-variant">Latest Reactions</h2>
+<div class="h-px flex-1 bg-gradient-to-l from-transparent to-outline-variant/30"></div>
+</div>
+<div class="space-y-4">
+<!-- Comment 1 -->
+<div class="surface-container-low p-6 rounded-2xl ghost-border flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center headline-font font-black text-on-secondary-container">
+              JD
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold headline-font">Jordan D.</p>
+<span class="px-2 py-0.5 bg-surface-variant text-[8px] uppercase font-black rounded-md text-on-surface-variant">Member since 2022</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">"The locker rooms were surprisingly clean. 10/10 will book again."</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase headline-font">2 Hours Ago</span>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="surface-container-low p-6 rounded-2xl ghost-border flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center headline-font font-black text-on-tertiary">
+              AL
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold headline-font">Alex L.</p>
+<span class="px-2 py-0.5 bg-primary/10 text-[8px] uppercase font-black rounded-md text-primary">Verified Player</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">"Just uploaded my gameplay highlights. The surface friction is spot on."</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase headline-font">5 Hours Ago</span>
+</div>
+</div>
+<!-- Comment 3 -->
+<div class="surface-container-low p-6 rounded-2xl ghost-border flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-outline-variant flex items-center justify-center headline-font font-black text-on-surface">
+              MK
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold headline-font">Mike K.</p>
+<span class="px-2 py-0.5 bg-surface-variant text-[8px] uppercase font-black rounded-md text-on-surface-variant">Team Captain</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">"Best app experience for turf booking I've used so far. No friction."</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xs" data-weight="fill">star_outline</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase headline-font">Yesterday</span>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<button class="text-xs uppercase tracking-widest font-black text-on-surface-variant hover:text-primary transition-colors headline-font">Load More Interactions</button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-[#22262f]/10 bg-[#10131a]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold text-[#00FF94] headline-font">TurfBooking Pro</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Partner with Us</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Careers</a>
+</div>
+<div class="font-['Manrope'] text-xs text-[#a9abb3]">
+        © 2024 TurfBooking Pro. The Kinetic Void.
+      </div>
+</div>
+</footer>
+<!-- Floating Mobile Menu (Fallback) -->
+<div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
+<div class="glass-card rounded-full ghost-border p-4 flex justify-around items-center">
+<span class="material-symbols-outlined text-on-surface-variant">home</span>
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<div class="w-12 h-12 rounded-full pulse-gradient flex items-center justify-center -mt-10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary">add</span>
+</div>
+<span class="material-symbols-outlined text-primary" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+</div>
+</body></html>

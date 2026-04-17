@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#004d62",
+                    "on-error": "#690005",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#45474a",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#e2e2e6",
+                    "on-primary-fixed": "#00210e",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-tint": "#00e383",
+                    "tertiary-fixed-dim": "#59d5ff",
+                    "on-tertiary-fixed": "#001f29",
+                    "on-primary": "#00391d",
+                    "on-tertiary": "#003544",
+                    "inverse-primary": "#006d3c",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed-variant": "#00522c",
+                    "tertiary-container": "#afe7ff",
+                    "surface-bright": "#3a3939",
+                    "outline": "#849586",
+                    "inverse-on-surface": "#313030",
+                    "background": "#131313",
+                    "primary-fixed": "#5bffa1",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-container": "#00713f",
+                    "surface-variant": "#353534",
+                    "on-secondary-fixed": "#1a1c1f",
+                    "secondary-fixed-dim": "#c6c6ca",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#4a4b4f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#bbbbbf",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "primary": "#f2fff1",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed": "#b9eaff",
+                    "on-secondary": "#2f3034",
+                    "surface-container": "#201f1f",
+                    "primary-fixed-dim": "#00e383",
+                    "outline-variant": "#3b4b3e",
+                    "tertiary": "#f8fcff",
+                    "primary-container": "#00ff94",
+                    "on-tertiary-container": "#006b86",
+                    "on-surface-variant": "#b9cbbb",
+                    "secondary": "#c6c6ca",
+                    "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #00FF94 0%, #00713f 100%);
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .ghost-border {
+            border: 1px solid rgba(59, 75, 62, 0.15);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b0e14] flex justify-between items-center w-full px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-[#00FF94] font-['Space_Grotesk']">TurfBooking Pro</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] tracking-tight text-sm font-medium uppercase text-[#00FF94] border-b-2 border-[#00FF94] pb-1" href="#">Find Turf</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm font-medium uppercase text-[#a9abb3] hover:text-[#a2ffbf] transition-colors duration-300" href="#">Leagues</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm font-medium uppercase text-[#a9abb3] hover:text-[#a2ffbf] transition-colors duration-300" href="#">Categories</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm font-medium uppercase text-[#a9abb3] hover:text-[#a2ffbf] transition-colors duration-300" href="#">About</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm font-medium uppercase text-[#a9abb3] hover:text-[#a2ffbf] transition-colors duration-300" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#00FF94] text-2xl scale-95 transition-transform duration-200">account_circle</button>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto space-y-8">
+<!-- Hero Section: Image Carousel & Basic Info -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 group relative overflow-hidden rounded-xl h-[500px] bg-surface-container-low shadow-2xl">
+<img alt="Arena Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="ultra-modern indoor sports arena with vibrant green turf, atmospheric overhead cinematic lighting, and sleek glass architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa-NEMKUxU3OntcFXAmx1YgR8zEVnIm68iDuIrHe-v-5CISWKWe92Iu460HLmPqJGDqKsUWzsvpjAR680odukEjI_G4OiBcGUw_-Nwci-bePok2Lo9K9AfXxDwe1lx1EgoANuPddCUXMyQtYZXyEA0H5UTpuePkzVNiUPsKziY3goAovYkyRfxKNDHPxhPzU7ypRhM0JmUJVTaVTF-89V3Y1JENPbdkMxlP0hu99Y8VVAQnR_kvspDTPVPbZL9ApN71aURYXeMjSA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+<!-- Carousel Nav -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<div class="w-8 h-1 rounded-full kinetic-gradient"></div>
+<div class="w-8 h-1 rounded-full bg-white/20"></div>
+<div class="w-8 h-1 rounded-full bg-white/20"></div>
+</div>
+<div class="absolute top-6 right-6">
+<span class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label text-xs font-bold tracking-widest uppercase">Live Available</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl ghost-border inner-glow flex flex-col justify-between flex-grow">
+<div>
+<h1 class="font-headline text-4xl font-bold tracking-tight text-primary-container mb-2">The Apex Arena</h1>
+<p class="text-on-surface-variant font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+                            South District, Metropolis City
+                        </p>
+</div>
+<div class="space-y-4 mt-8">
+<div class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Base Rate</span>
+<span class="text-2xl font-headline font-bold text-white">$85<span class="text-sm font-normal text-on-surface-variant">/hr</span></span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Rating</span>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-xs font-normal ml-1">(128 reviews)</span>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full kinetic-gradient text-on-primary py-4 rounded-full font-headline font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform shadow-lg shadow-primary-container/10">
+                        Instant Book
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Specs, Map, Amenities -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Multi-Sport Specs -->
+<div class="bg-surface-container-low p-8 rounded-xl ghost-border inner-glow">
+<h2 class="font-headline text-xl font-bold mb-6 flex items-center gap-2 uppercase tracking-tight">
+<span class="w-1.5 h-6 kinetic-gradient rounded-full"></span>
+                        Arena Specifications
+                    </h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-highest p-4 rounded-lg flex flex-col gap-1">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-tighter">Surface</span>
+<span class="font-headline font-bold text-sm">Hybrid Turf 3G</span>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-lg flex flex-col gap-1">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-tighter">Dimensions</span>
+<span class="font-headline font-bold text-sm">45m x 25m</span>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-lg flex flex-col gap-1">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-tighter">Sports</span>
+<span class="font-headline font-bold text-sm">Futsal, Tennis</span>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-lg flex flex-col gap-1">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-tighter">Capacity</span>
+<span class="font-headline font-bold text-sm">12 Players</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Amenities & Map -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Amenities -->
+<div class="bg-surface-container-low p-8 rounded-xl ghost-border inner-glow">
+<h3 class="font-headline text-lg font-bold mb-6 uppercase tracking-tight">Amenities</h3>
+<div class="grid grid-cols-2 gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">bathroom</span>
+</div>
+<span class="text-sm font-medium">Restrooms</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">medical_services</span>
+</div>
+<span class="text-sm font-medium">Healthcare</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">local_parking</span>
+</div>
+<span class="text-sm font-medium">Free Parking</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">shopping_bag</span>
+</div>
+<span class="text-sm font-medium">Pro Shop</span>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="h-full min-h-[250px] rounded-xl overflow-hidden ghost-border inner-glow relative group">
+<img alt="Map Location" class="w-full h-full object-cover grayscale opacity-40 transition-opacity group-hover:opacity-60" data-alt="abstract dark themed minimalist map of an urban district with bright green neon routes and points of interest" data-location="Metropolis City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwBq-e1g9Os-hD1c3atMmQNICWHBXrVbHKrBtYXlnBwfz9nbahH9JwJrca94PAAP3hCtsW5x17KOf43vRIRjjISoowe8SPMv1nD5aMahlaUJBeRL_jPy6iKsVTgB8KVu9dKTUJ5oOc9bwnCd6ozfEQsAeL3-XnIVrV52bQS2J_fChGRjneVTrk_6qHukBNaP-yacX-Z-kE_ukXoprt0OGG-8HitPkfKC0KSt1en1zcw_0Y0B-NBRkgfS4rHuwP1D1AKGkVU3c6kQ"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,255,148,0.4)] animate-pulse">
+<span class="material-symbols-outlined text-on-primary">location_on</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase">
+                            Open in Maps
+                        </div>
+</div>
+</div>
+</div>
+<!-- Right Column: Booking & Calendar -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-low rounded-xl ghost-border inner-glow overflow-hidden sticky top-24">
+<div class="p-6 border-b border-outline-variant/10">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight">Select Slot</h3>
+</div>
+<!-- Sleek Calendar -->
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<button class="material-symbols-outlined text-on-surface-variant">chevron_left</button>
+<span class="font-headline font-bold text-sm uppercase tracking-widest">November 2024</span>
+<button class="material-symbols-outlined text-on-surface-variant">chevron_right</button>
+</div>
+<div class="grid grid-cols-7 gap-2 mb-4">
+<span class="text-[10px] text-center text-on-surface-variant font-bold">SU</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">MO</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">TU</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">WE</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">TH</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">FR</span>
+<span class="text-[10px] text-center text-on-surface-variant font-bold">SA</span>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Selected Day -->
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold opacity-30">12</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold opacity-30">13</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold kinetic-gradient text-on-primary">14</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold hover:bg-surface-container-highest cursor-pointer">15</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold hover:bg-surface-container-highest cursor-pointer">16</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold hover:bg-surface-container-highest cursor-pointer">17</div>
+<div class="aspect-square flex items-center justify-center rounded-full text-sm font-bold hover:bg-surface-container-highest cursor-pointer">18</div>
+</div>
+</div>
+<!-- Time Slot Grid -->
+<div class="px-6 pb-8 space-y-4">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block">Available Slots</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-surface-container-highest border border-outline-variant/30 py-3 rounded-lg text-xs font-bold hover:border-primary-container transition-colors">08:00 AM</button>
+<button class="bg-surface-container-highest border border-outline-variant/30 py-3 rounded-lg text-xs font-bold hover:border-primary-container transition-colors">10:00 AM</button>
+<button class="bg-primary-container text-on-primary py-3 rounded-lg text-xs font-bold">02:00 PM</button>
+<button class="bg-surface-container-highest border border-outline-variant/30 py-3 rounded-lg text-xs font-bold hover:border-primary-container transition-colors">04:00 PM</button>
+<button class="bg-surface-container-highest border border-outline-variant/30 py-3 rounded-lg text-xs font-bold opacity-30 cursor-not-allowed">06:00 PM</button>
+<button class="bg-surface-container-highest border border-outline-variant/30 py-3 rounded-lg text-xs font-bold hover:border-primary-container transition-colors">08:00 PM</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#000000] border-t border-[#22262f]/20 flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full mt-auto">
+<div class="text-lg font-bold text-[#00FF94] font-['Space_Grotesk'] mb-6 md:mb-0">TurfBooking Pro</div>
+<div class="flex gap-8 mb-6 md:mb-0">
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Partner with Us</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-['Manrope'] text-xs text-[#a9abb3]">© 2024 TurfBooking Pro. The Kinetic Void.</div>
+</footer>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfBooking Pro - Arena Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#004d62",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#45474a",
+                        "on-background": "#1a1c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e2e6",
+                        "on-primary-fixed": "#00210e",
+                        "surface-container-low": "#f7f9f7",
+                        "surface-tint": "#006d3c",
+                        "tertiary-fixed-dim": "#59d5ff",
+                        "on-tertiary-fixed": "#001f29",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#00e383",
+                        "on-surface": "#1a1c1e",
+                        "on-primary-fixed-variant": "#00522c",
+                        "tertiary-container": "#afe7ff",
+                        "surface-bright": "#fcfdf6",
+                        "outline": "#707970",
+                        "inverse-on-surface": "#f0f1eb",
+                        "background": "#F2FFF1",
+                        "primary-fixed": "#5bffa1",
+                        "surface-container-high": "#e9ebe4",
+                        "on-primary-container": "#00210e",
+                        "surface-variant": "#dee5dd",
+                        "on-secondary-fixed": "#1a1c1f",
+                        "secondary-fixed-dim": "#c6c6ca",
+                        "surface-container-highest": "#e1e3db",
+                        "secondary-container": "#e2e2e6",
+                        "on-error-container": "#410002",
+                        "on-secondary-container": "#1a1c1f",
+                        "error-container": "#93000a",
+                        "surface": "#F2FFF1",
+                        "primary": "#006D3C",
+                        "inverse-surface": "#2f312d",
+                        "tertiary-fixed": "#b9eaff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eff1e9",
+                        "primary-fixed-dim": "#00e383",
+                        "outline-variant": "#bfc9be",
+                        "tertiary": "#006684",
+                        "primary-container": "#006D3C",
+                        "on-tertiary-container": "#001e2a",
+                        "on-surface-variant": "#404941",
+                        "secondary": "#5d5e62",
+                        "surface-dim": "#d9dbd2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #006D3C 0%, #004d2a 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(0, 109, 60, 0.1);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F2FFF1]/80 backdrop-blur-md shadow-none">
+<div class="flex justify-between items-center w-full px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-[#006D3C] font-headline">TurfBooking Pro</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-headline tracking-tight text-sm font-medium uppercase text-[#006D3C] border-b-2 border-[#006D3C] pb-1" href="#">Find Turf</a>
+<a class="font-headline tracking-tight text-sm font-medium uppercase text-[#707970] hover:text-[#006D3C] transition-colors duration-300" href="#">Leagues</a>
+<a class="font-headline tracking-tight text-sm font-medium uppercase text-[#707970] hover:text-[#006D3C] transition-colors duration-300" href="#">Categories</a>
+<a class="font-headline tracking-tight text-sm font-medium uppercase text-[#707970] hover:text-[#006D3C] transition-colors duration-300" href="#">About</a>
+<a class="font-headline tracking-tight text-sm font-medium uppercase text-[#707970] hover:text-[#006D3C] transition-colors duration-300" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#006D3C] hover:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section & Image Carousel -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[500px] shadow-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern indoor multi-sport arena with professional lighting and pristine green artificial turf under bright daylight from high windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnGDbG_kP2Qlk1wV1cJocamJTKxXged6-txomN7zF8-Ua4wx2nuwrtri7BhU3jXBEw2fJpXohZAw14CqMJIgwvqbGGTYG_PGlPCGcNASMlbkwn5cQKGvT3SAyRLVC_qgyfQ3qVPmagVX4tpCpOb7G3vyHqw9VejHZhgl3BapY9p2Wz6gx1axf3Vy663fwdo2QdaM3o6QEDjWwM-1ya5qHeDRw8jL282AnzpahOc02OMa8T9PVn8DSA67ry9hJGOWjHdJpKbtmn_CQ"/>
+<div class="absolute bottom-6 left-6 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-white shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/40 shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/40 shadow-sm"></div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="rounded-xl overflow-hidden h-1/2 shadow-sm border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Close up of a football on a high quality green turf with blurred background of a bright sports complex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnbXx5lWVnVTkkAx_mCK4j2jHtJ7GJlNR6hkTug0uvBYvWxgKG8NrQXHWZaqCWa7rtbkjVCqts4at3M3xWFumhRVFnUVOg_6_vr88mJUeMVJ9ApJdsM1NzARV1e4viE2fbYVzyhvImtw_Z1jtMATyKdX_CAKNwz07sBlvDIYx_M_-3dUqeSd-bqIvdoIPZru6DV73CbbFoIHFKO5PoIlx37YjY-Vq-dXbNoH7xeDXiXxDa8L5alU2BFPlwbQhMGL3GBu4y-3mpc78"/>
+</div>
+<div class="rounded-xl overflow-hidden h-1/2 shadow-sm border border-outline-variant/20 relative">
+<img class="w-full h-full object-cover" data-alt="Interior view of a modern sports changing room with wooden lockers and clean minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiBDvFeBy2eSWyPteUhKqzR5rzJ5oixGE38gS6FlGkVBX8IS3tvkYnF2sbCsXc0ce0QXDRDJ6v87VQPIo1BDDPHH9kk7A8UJoelEICqbTQE_PS7VEcClVB_VtNXHns1WzVTN1egx-avGXnzS6Gvsmd6UkFT0CuVyOZSEsMz1Uyr-cnDC3LVohu9fFDsBgsZsoo6oMMY8qxd2H0URFcQyCE_AKUxU8y8R3VBH42deUqCxkj2RtRqLtLUIhqGn311zYCd4yTWxHr-jE"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer group hover:bg-black/50 transition-colors">
+<span class="text-white font-headline font-bold text-xl">+12 Photos</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Details Column -->
+<div class="lg:col-span-2 space-y-10">
+<!-- Header Info -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-label font-bold tracking-widest uppercase">Elite Certified</span>
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold ml-1">4.9</span>
+<span class="text-on-surface-variant text-sm font-normal ml-1">(128 reviews)</span>
+</div>
+</div>
+<h1 class="text-5xl font-headline font-extrabold tracking-tighter text-on-surface">Vanguard Kinetic Arena</h1>
+<p class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined">location_on</span>
+                        1248 Sportplex Drive, Stadium District, WA 98101
+                    </p>
+</div>
+<!-- Multi-Sport Specs -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<h3 class="font-headline text-xl font-bold mb-6 text-on-surface">Arena Specifications</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-outline tracking-wider">Surface Type</p>
+<p class="font-bold text-on-surface">Hybrid Astro G4</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-outline tracking-wider">Ceiling Height</p>
+<p class="font-bold text-on-surface">12 Meters</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-outline tracking-wider">Pitch Size</p>
+<p class="font-bold text-on-surface">45m x 90m</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-outline tracking-wider">Capacity</p>
+<p class="font-bold text-on-surface">150 Spectators</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10 flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-xl">sports_soccer</span>
+<span class="text-sm font-medium">Football</span>
+</div>
+<div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-xl">sports_tennis</span>
+<span class="text-sm font-medium">Tennis</span>
+</div>
+<div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-xl">sports_basketball</span>
+<span class="text-sm font-medium">Basketball</span>
+</div>
+<div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-xl">sports_volleyball</span>
+<span class="text-sm font-medium">Volleyball</span>
+</div>
+</div>
+</div>
+<!-- Amenities -->
+<div>
+<h3 class="font-headline text-xl font-bold mb-6 text-on-surface">Arena Amenities</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">wc</span>
+<span class="text-sm font-medium text-on-surface">Bathrooms</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">medical_services</span>
+<span class="text-sm font-medium text-on-surface">Healthcare</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">local_parking</span>
+<span class="text-sm font-medium text-on-surface">Free Parking</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">wifi</span>
+<span class="text-sm font-medium text-on-surface">High-speed WiFi</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">shower</span>
+<span class="text-sm font-medium text-on-surface">Showers</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-3xl mb-3 text-outline group-hover:text-primary transition-colors">kitchen</span>
+<span class="text-sm font-medium text-on-surface">Refreshments</span>
+</div>
+</div>
+</div>
+<!-- Location Map -->
+<div class="rounded-xl overflow-hidden h-80 shadow-sm border border-outline-variant/10 relative">
+<img class="w-full h-full object-cover" data-alt="Clean minimalist map interface showing the arena location in a modern urban street layout with soft green markers" data-location="Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYpDLJqqPPFk77d6cTxepYVqfTU6hSdCX9aD_jvhbjzA6sn41VAfO0rX-aEBElZcniELPCOkSs45gnt_noOIdqcElPukQ1dVIW4f2yh6Y1_AvSedKM0bgcrGRFH1Cf78OPYktY7OHXs45KLbVccQtKFrcUxqTlyL6b_Un4VBYYz2q3yNaNK-64RvFNH5v2_zd2mv8xCaKSVNE0XACNlwo4f__ElbyQFiHy38JxguurPdx80fhWcuEH3GTOgprOvL21QMeIHVj6rMc"/>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 glass-panel px-6 py-4 rounded-xl shadow-lg">
+<p class="font-headline font-bold text-primary">Get Directions</p>
+<p class="text-xs text-on-surface-variant">5 mins from I-5 North Exit</p>
+</div>
+</div>
+</div>
+<!-- Booking Column -->
+<div class="lg:col-span-1">
+<div class="sticky top-24 space-y-6">
+<div class="glass-panel p-8 rounded-xl shadow-xl border border-primary/10">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-xs font-label uppercase text-outline tracking-wider">Starting at</p>
+<p class="text-4xl font-headline font-extrabold text-[#006D3C]">$45<span class="text-lg font-medium text-on-surface-variant">/hr</span></p>
+</div>
+<div class="bg-primary/5 px-3 py-1 rounded-lg">
+<span class="text-xs font-bold text-primary">BEST PRICE</span>
+</div>
+</div>
+<!-- Calendar Mockup -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline font-bold text-on-surface">Select Date</h4>
+<div class="flex gap-2">
+<button class="p-1 hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-[10px] font-bold text-outline">MO</span>
+<span class="text-[10px] font-bold text-outline">TU</span>
+<span class="text-[10px] font-bold text-outline">WE</span>
+<span class="text-[10px] font-bold text-outline">TH</span>
+<span class="text-[10px] font-bold text-outline">FR</span>
+<span class="text-[10px] font-bold text-outline">SA</span>
+<span class="text-[10px] font-bold text-outline">SU</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<span class="p-2 text-xs text-outline/30">28</span>
+<span class="p-2 text-xs text-outline/30">29</span>
+<span class="p-2 text-xs text-outline/30">30</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">1</span>
+<span class="p-2 text-xs font-medium bg-primary text-white rounded-lg cursor-pointer shadow-md">2</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">3</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">4</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">5</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">6</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">7</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">8</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">9</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">10</span>
+<span class="p-2 text-xs font-medium hover:bg-primary/10 rounded-lg cursor-pointer transition-colors">11</span>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="mb-8">
+<h4 class="font-headline font-bold text-on-surface mb-4">Available Slots</h4>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium hover:bg-primary hover:text-white hover:border-primary transition-all">08:00 AM</button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium bg-primary/5 border-primary/30 text-primary">09:30 AM</button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium hover:bg-primary hover:text-white hover:border-primary transition-all">11:00 AM</button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium opacity-40 cursor-not-allowed">01:30 PM</button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium hover:bg-primary hover:text-white hover:border-primary transition-all">03:00 PM</button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant text-sm font-medium hover:bg-primary hover:text-white hover:border-primary transition-all">04:30 PM</button>
+</div>
+</div>
+<button class="w-full kinetic-gradient text-white py-5 rounded-full font-headline font-bold text-lg shadow-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+                            Book Session
+                            <span class="material-symbols-outlined">bolt</span>
+</button>
+<p class="text-center text-[10px] text-outline mt-4 tracking-wider uppercase font-bold">No cancellation fee before 24h</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-highest/30 border border-outline-variant/10">
+<h5 class="font-headline font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+                            Trust &amp; Safety
+                        </h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our elite turfs undergo weekly maintenance and are sanitised after every session for your peak performance.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-[#000000] border-t border-[#22262f]/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full">
+<div class="mb-6 md:mb-0">
+<div class="text-lg font-bold text-[#00FF94] font-headline mb-2">TurfBooking Pro</div>
+<div class="font-['Manrope'] text-xs text-[#a9abb3]">© 2024 TurfBooking Pro. The Kinetic Void.</div>
+</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Partner with Us</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00cffc] transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

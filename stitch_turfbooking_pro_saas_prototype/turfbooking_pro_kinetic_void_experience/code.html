@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TurfBooking Pro | The Kinetic Void</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#006437",
+                    "surface-dim": "#0b0e14",
+                    "on-primary-fixed-variant": "#006638",
+                    "background": "#0b0e14",
+                    "tertiary-fixed-dim": "#d97dff",
+                    "on-tertiary-fixed-variant": "#600083",
+                    "on-secondary-fixed": "#003a48",
+                    "on-secondary-fixed-variant": "#00586d",
+                    "surface-container": "#161a21",
+                    "surface-bright": "#282c36",
+                    "surface-container-high": "#1c2028",
+                    "surface": "#0b0e14",
+                    "on-primary-fixed": "#004624",
+                    "error": "#ff716c",
+                    "inverse-primary": "#006e3c",
+                    "secondary-container": "#00677f",
+                    "inverse-surface": "#f9f9ff",
+                    "on-surface-variant": "#a9abb3",
+                    "on-primary-container": "#005b31",
+                    "tertiary-fixed": "#e192ff",
+                    "surface-container-low": "#10131a",
+                    "error-dim": "#d7383b",
+                    "on-surface": "#ecedf6",
+                    "secondary-fixed-dim": "#37d4ff",
+                    "primary-fixed-dim": "#00ed89",
+                    "on-tertiary": "#390050",
+                    "outline": "#73757d",
+                    "primary-fixed": "#00fd93",
+                    "secondary-fixed": "#80deff",
+                    "tertiary": "#d674ff",
+                    "on-secondary": "#004050",
+                    "tertiary-container": "#be0dff",
+                    "on-tertiary-container": "#000000",
+                    "tertiary-dim": "#bb00fc",
+                    "surface-container-highest": "#22262f",
+                    "secondary": "#00cffc",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-fixed": "#2c003f",
+                    "on-background": "#ecedf6",
+                    "on-error": "#490006",
+                    "primary-dim": "#00ed89",
+                    "surface-variant": "#22262f",
+                    "outline-variant": "#45484f",
+                    "surface-tint": "#a2ffbf",
+                    "error-container": "#9f0519",
+                    "secondary-dim": "#00c0ea",
+                    "on-error-container": "#ffa8a3",
+                    "inverse-on-surface": "#52555c",
+                    "primary-container": "#00fd93",
+                    "primary": "#a2ffbf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0b0e14; color: #ecedf6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card { background: rgba(34, 38, 47, 0.6); backdrop-filter: blur(24px); border: 1px solid rgba(69, 72, 79, 0.15); }
+        .kinetic-gradient { background: linear-gradient(135deg, #a2ffbf 0%, #00cffc 100%); }
+        .text-glow { text-shadow: 0 0 15px rgba(162, 255, 191, 0.4); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .inset-input { background: #000000; border: 1px solid rgba(69, 72, 79, 0.3); transition: all 0.3s ease; }
+        .inset-input:focus { border-color: rgba(0, 207, 252, 0.5); box-shadow: 0 0 12px rgba(0, 207, 252, 0.2); outline: none; }
+        .orb-blur { filter: blur(120px); opacity: 0.15; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl no-border bg-gradient-to-b from-[#0b0e14] to-transparent shadow-2xl shadow-black/20">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black text-[#00FF94] tracking-tighter">TurfBooking Pro</div>
+<div class="hidden md:flex gap-8 font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold">
+<a class="text-[#00FF94] border-b-2 border-[#00FF94] pb-1 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" href="#">Find Turf</a>
+<a class="text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" href="#">Leagues</a>
+<a class="text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" href="#">About</a>
+<a class="text-[#a9abb3] hover:text-[#a2ffbf] transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#a9abb3] font-['Space_Grotesk'] text-sm uppercase font-bold hover:text-[#00FF94] transition-all">Sign In</button>
+<button class="bg-[#00fd93] text-[#006437] px-6 py-2 rounded-full font-['Space_Grotesk'] text-sm uppercase font-bold scale-95 active:scale-90 transition-all shadow-[0_0_20px_rgba(0,253,147,0.3)]">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<!-- Animated Background Elements -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary orb-blur rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-tertiary orb-blur rounded-full"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at center, #161a21 0%, transparent 70%);"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card mb-8 border-outline-variant/10">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold">Live Booking Engine Active</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
+                BOOK YOUR TURF <br/>
+<span class="text-transparent bg-clip-text kinetic-gradient">IN SECONDS</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                The high-performance platform for the modern athlete. Real-time availability, instant confirmations, and premium facilities at your fingertips.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="w-full md:w-auto kinetic-gradient text-on-primary font-headline font-bold text-lg px-10 py-5 rounded-full hover:shadow-[0_0_30px_rgba(162,255,191,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                    Find Turf
+                </button>
+<button class="w-full md:w-auto glass-card px-10 py-5 rounded-full font-headline font-bold text-lg border-outline-variant/20 hover:bg-surface-container-highest transition-all duration-300">
+                    Register as Owner
+                </button>
+</div>
+<!-- Dashboard Mockup/Hero Image -->
+<div class="mt-20 relative max-w-5xl mx-auto group">
+<div class="absolute -inset-1 kinetic-gradient rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative rounded-3xl overflow-hidden glass-card border-outline-variant/10 shadow-2xl">
+<img class="w-full h-[400px] object-cover opacity-80" data-alt="high-angle shot of a vibrant green professional football turf stadium illuminated by bright floodlights at night with dramatic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8yeUbbg5hcg-JYBivpXTx2rW-WbPi5zRMRsbrj2JTIZIYyXqBfsEMEmcjOoJ-lmCzZ3khZ6bWzsBBVrd6SXdHTYXY_ZAMGmZeTduIDuBlsbbOxqjMjfkmj0wt5187Qn6s8GEit-cnSysI4qSaNEGKGaKCTw9990KT6zgJldfRmUvPRv56jUo9dE6YwfRwA6tbMB7hYtQ_JXf30TEOq42FyDHauePXONSCCq8rJvCwWpgrFb4D8Z6Ad00QcoyyXcVjbYNo8wxukj0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div class="text-left">
+<h3 class="text-3xl font-bold font-headline">Elite Sports Arena</h3>
+<p class="text-on-surface-variant">London, UK • 5-a-side • FIFA Grade</p>
+</div>
+<div class="bg-primary/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-primary/20">
+<p class="text-xs uppercase font-bold text-primary tracking-widest">Starts from</p>
+<p class="text-2xl font-black font-headline text-primary">$45/hr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-32 relative bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-20">
+<span class="text-tertiary font-headline font-bold uppercase tracking-[0.3em] text-sm">Engine Capabilities</span>
+<h2 class="text-5xl font-black tracking-tighter mt-4">ENGINEERED FOR PERFORMANCE</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-2 row-span-2 glass-card p-10 rounded-[2rem] flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary orb-blur -mr-20 -mt-20 group-hover:opacity-30 transition-opacity"></div>
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="text-3xl font-bold font-headline mb-4">Verified Turfs</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed">Every pitch on our platform undergoes a 50-point quality inspection. We guarantee surface integrity and lighting standards for every match.</p>
+</div>
+<img class="rounded-2xl mt-8 w-full h-48 object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="close-up detail of synthetic sports grass texture with clean white boundary lines and high definition synthetic fibers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWALCK_VmIpCtBQq6sjgn7oDFtyaRW_FYzcr0gdyLPjj7ljkz_-FoyjDODZyNNyj63i54MbeeAkO5EOAKJw9Iemtwka357AOIsvoJLkGzsQgxy-IARk1Zal3pmMb0tP9i99KaMJ9O6xmS6dPpzaxF-UbCLhVYhw4wGd1n3l62A-IMxYD0oX5PsPUPpwxJYiK6NwQHZI5ZK_Yj4ksAlfF-svpPPOe7S2wtDt9m6POxITbrqu6WasGGWdBUx3ZOamljXaavt2r00j0"/>
+</div>
+<!-- Secondary Features -->
+<div class="glass-card p-8 rounded-[2rem] group hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4">payments</span>
+<h4 class="text-xl font-bold font-headline mb-2">Secure Payments</h4>
+<p class="text-on-surface-variant text-sm">Military-grade encryption for all transactions with instant refunds for cancellations.</p>
+</div>
+<div class="glass-card p-8 rounded-[2rem] group hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-3xl text-tertiary mb-4">schedule</span>
+<h4 class="text-xl font-bold font-headline mb-2">Real-time Slots</h4>
+<p class="text-on-surface-variant text-sm">Direct synchronization with arena calendars. What you see is exactly what is available.</p>
+</div>
+<!-- AI Feature -->
+<div class="md:col-span-2 glass-card p-8 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center border-primary/10">
+<div class="flex-1">
+<span class="material-symbols-outlined text-3xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="text-2xl font-bold font-headline mb-2">AI Recommendations</h4>
+<p class="text-on-surface-variant">Our engine learns your playstyle and preferences to suggest the best pitches and peak times for your squad.</p>
+</div>
+<div class="w-full md:w-48 h-32 bg-surface-container-lowest rounded-xl flex items-center justify-center border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute inset-0 kinetic-gradient opacity-5 animate-pulse"></div>
+<span class="material-symbols-outlined text-primary text-5xl opacity-40">query_stats</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works: Kinetic Timeline -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-24">
+<h2 class="text-5xl font-black tracking-tighter">THE PLAYBOOK</h2>
+<p class="text-on-surface-variant mt-4">Four steps to the ultimate match day.</p>
+</div>
+<div class="relative">
+<!-- Connector Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -translate-y-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+<!-- Step 1 -->
+<div class="text-center group">
+<div class="w-20 h-20 rounded-full glass-card mx-auto mb-6 flex items-center justify-center border-2 border-outline-variant/20 group-hover:border-primary transition-all duration-500 relative">
+<span class="text-2xl font-black font-headline group-hover:text-primary">01</span>
+<div class="absolute -inset-2 rounded-full kinetic-gradient blur opacity-0 group-hover:opacity-20 transition-opacity"></div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Search</h4>
+<p class="text-on-surface-variant text-sm">Filter by location, turf type, and player capacity.</p>
+</div>
+<!-- Step 2 -->
+<div class="text-center group">
+<div class="w-20 h-20 rounded-full glass-card mx-auto mb-6 flex items-center justify-center border-2 border-outline-variant/20 group-hover:border-secondary transition-all duration-500 relative">
+<span class="text-2xl font-black font-headline group-hover:text-secondary">02</span>
+<div class="absolute -inset-2 rounded-full bg-secondary blur opacity-0 group-hover:opacity-20 transition-opacity"></div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Select</h4>
+<p class="text-on-surface-variant text-sm">Pick your perfect slot from the live calendar.</p>
+</div>
+<!-- Step 3 -->
+<div class="text-center group">
+<div class="w-20 h-20 rounded-full glass-card mx-auto mb-6 flex items-center justify-center border-2 border-outline-variant/20 group-hover:border-tertiary transition-all duration-500 relative">
+<span class="text-2xl font-black font-headline group-hover:text-tertiary">03</span>
+<div class="absolute -inset-2 rounded-full bg-tertiary blur opacity-0 group-hover:opacity-20 transition-opacity"></div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Pay</h4>
+<p class="text-on-surface-variant text-sm">Instant secure checkout via card or digital wallet.</p>
+</div>
+<!-- Step 4 -->
+<div class="text-center group">
+<div class="w-20 h-20 rounded-full kinetic-gradient mx-auto mb-6 flex items-center justify-center border-2 border-primary group-hover:scale-110 transition-all duration-500 shadow-xl shadow-primary/20">
+<span class="text-2xl font-black font-headline text-on-primary">04</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2 text-primary">Play</h4>
+<p class="text-on-surface-variant text-sm">Receive your QR entry code and hit the pitch.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leaderboard Preview -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Top Rated Turfs -->
+<div>
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="text-primary font-headline font-bold uppercase tracking-widest text-xs">Hall of Fame</span>
+<h3 class="text-4xl font-black tracking-tighter mt-2">ELITE PITCHES</h3>
+</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<div class="glass-card p-5 rounded-2xl flex items-center gap-6 group hover:translate-x-2 transition-transform">
+<div class="w-24 h-24 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="professional night-time soccer field under stadium lights with high quality turf and empty seating in distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEODaeuY6a7QPjedYpqh_wNsPBaCIf7-dWwp33t_aPRXEJsXXtOaXS9vcZS6LPX8VnQd_tcrDjBbjq7Ruy7Z7jDsUIgyVetApiZnuAkrQxRMVtMAOlVeWT-g1cHWlPrBP6rMW-yDnkPJgfjpqigaLheaAIGQaPI08KCRKJKF13kDunnzf7actUgoRnzF3u7xxA59u5UIINIYukuruj6JwqwXqU7VHieAlYQqBtUPKFXB_lietir95a_JDCnrHUReesHZJtjIjKhtI"/>
+</div>
+<div class="flex-1">
+<h5 class="text-xl font-bold font-headline">The Wembley Hub</h5>
+<p class="text-on-surface-variant text-sm">South London • 4.9 ★ (1.2k Reviews)</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-black font-headline text-lg">$60/hr</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-tighter">Premium Grade</span>
+</div>
+</div>
+<div class="glass-card p-5 rounded-2xl flex items-center gap-6 group hover:translate-x-2 transition-transform">
+<div class="w-24 h-24 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="vibrant indoor soccer pitch with bright artificial lighting and clean professional lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxz52BezqRTtZQMvwdiUA4iVQijws-aZhJ7kggsEgtQrqEorVkFROclZ_3B6koyIUEv0-4e9dfR5XM4LWw8rHH006EBlrb7m7Om7PtcUyvn5Q3aPpRnDKSfCff3o6KqR_Qyt36oNr0pY8MG6rk6DmDPKVUMso5HGEQflSRjdEnC1sGtl0wwJzt8azRS951TbWOWWtTMtGMWieIgfJeutOw9VuMrFPDgO4oXK2emDP8bOaE5ctuFG3_u6R2Kv-huZU12LGycqf9n4Y"/>
+</div>
+<div class="flex-1">
+<h5 class="text-xl font-bold font-headline">Apex Sports Arena</h5>
+<p class="text-on-surface-variant text-sm">North London • 4.8 ★ (850 Reviews)</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-black font-headline text-lg">$55/hr</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant tracking-tighter">Indoor FIFA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Users -->
+<div>
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="text-secondary font-headline font-bold uppercase tracking-widest text-xs">MVP Rankings</span>
+<h3 class="text-4xl font-black tracking-tighter mt-2">TOP PLAYERS</h3>
+</div>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold uppercase tracking-widest" href="#">Global Rankings</a>
+</div>
+<div class="space-y-4">
+<div class="glass-card p-4 rounded-2xl flex items-center gap-4 border-l-4 border-primary">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="portrait of a young athletic male smiling with short dark hair in front of a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPbZ67Z6BxH5OSa1IL7Ujh_04iStNxAbMdgw1FJxQVuV3B-zJXqXxvvDneE-1xUkKtJg1e6gwzE_4c49Tc5K9yNbeFji-DVOhFVRC1FWgYmygovNOIO_mWSjpGyCsex0tzDPk3wdH7oDNYNZEx1L1HkbWjpBDwMzdz7DNs6fEtgUFhaTZRlW6H3_vJFmmJb3Oc3fBix3pCx8Nf9DtMkZdB6odvwtXKVrZ7O0YYJ5v6rl8DCe2n2VQZZj0Ik1hMRqISe0_mdEea5rI"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold font-headline">Marcus Rashford</h5>
+<p class="text-xs text-on-surface-variant">128 Matches • Pro Striker</p>
+</div>
+<div class="px-3 py-1 bg-primary/10 rounded-full">
+<span class="text-primary font-black text-xs">Rank #1</span>
+</div>
+</div>
+<div class="glass-card p-4 rounded-2xl flex items-center gap-4 border-l-4 border-secondary">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="portrait of a young woman athlete with tied back hair in athletic wear looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv5G-h07tfot42rBfTGAnmWxJXo9WkEMf5Zv-tBy0HAN1gDWtc6pXyZMjUz1u1fd94l0BTrAvubvcFFzccnpbSsCVCXrFE57-hgyP5ST19oJZT36D8mHAdSIHe8S7M-0wN_BgOuOA3PVVc3f3lPG_ejPbrqotYa_83ubn9UsXXfqaX5X2_ery5OOkG16rE4M3ddaxR8wZ01wVvBqkusUqCD2Do37vKpB9UQVuc2Dc8SyEQ73TIP7tnCu6afTzOXj8GDKwrClHOf2Q"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold font-headline">Sarah Jenkins</h5>
+<p class="text-xs text-on-surface-variant">115 Matches • Midfield Maestro</p>
+</div>
+<div class="px-3 py-1 bg-secondary/10 rounded-full">
+<span class="text-secondary font-black text-xs">Rank #2</span>
+</div>
+</div>
+<div class="glass-card p-4 rounded-2xl flex items-center gap-4 border-l-4 border-tertiary">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a man in casual attire smiling with light beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz0l51Z6sTXthTq6vjzOeRvwXG-z3op4Mdsie1wVerMLb9BzaHvTp_wlq5a34Ayg71JR85GIeuFyX5fW5-6L9NHqqy_XaEke4aC9CpXKl3Wc6rlnvRiByxFq0PqmdL8C_6H1abFStFkFKsWPTqlN6Kng4QaG1LNhG-uoHjobf1A-jrhNEBmQVXTPR0CPu2Ld9Kdm-0FSVQJRAsf0KMc7PiQYb_x15ZEg9Tp1j980qOr33Cwxt56YNG3-7mqzzw8OA47gpJ9lwSZ9w"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold font-headline">David Alaba</h5>
+<p class="text-xs text-on-surface-variant">92 Matches • Wall of Defense</p>
+</div>
+<div class="px-3 py-1 bg-tertiary/10 rounded-full">
+<span class="text-tertiary font-black text-xs">Rank #3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-32 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-5xl font-black tracking-tighter">PLAYER VOICES</h2>
+<p class="text-on-surface-variant mt-4">Don't just take our word for it—join the league.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-card rounded-[2.5rem] overflow-hidden p-8 flex flex-col group relative">
+<div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30 flex items-center gap-1.5 z-10">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Verified Review</span>
+</div>
+<div class="mb-8 relative rounded-2xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="cinematic action shot of a soccer player striking a ball at sunset on a professional field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG0WiqxlNYamGKZlNCuQBeWKx1ygLABPzMaemGmBUJVUZTAVQEje5_X7RK2k_6CkYkAl_4ftT9hAqPWi44LmdQXigVfns28tWXJS0vnwCtx1AMV8ODBDlN_WdwlMlK6Ym6vqO7MK1GOyKPFZvRMMohCfu_qfPubX23FW_F4IvNDRHSOa637DtrDdCeCT9qzcTZaca5PJxkxJxxAT7jYARK_i3L9vV294QohZRXV0iWM7VF1JCjjxxiAI4iv2b_W04fflsXWCsN0vo"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<blockquote class="text-lg font-light leading-relaxed mb-6 italic">"Booking used to be a headache with messy WhatsApp groups. Now it's 3 clicks and we're ready for kickoff."</blockquote>
+<div class="mt-auto flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-bold font-headline">Liam O'Conner</p>
+<p class="text-xs text-on-surface-variant">Team Captain • London Rovers</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card rounded-[2.5rem] overflow-hidden p-8 flex flex-col group relative md:translate-y-8">
+<div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30 flex items-center gap-1.5 z-10">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Verified Review</span>
+</div>
+<div class="mb-8 relative rounded-2xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="professional athlete in focused training session on outdoor artificial turf with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQTPP1wbp8KVhCLCO1brQGMcA-NpKMmb-PAk8cCbcbrjPMpUgv_Ynha-3_vLdM2J7V12Dw3oLCnqsz0fk-3Zx9eXtUVSERixYA8sH4AbmGvpLlVWx1alEn_KPWP5DyIBjmUpVUYz434uVwrKWXEbCOja1ZIScHlcdSgJjkdDyiW-2OvYdNzUkOYaK63tyvHTmWuvOI4zx0rCUPDeNVzl8fbuCyqcsTYhognYg0vrklz87D3NBEmyuGmn_iL6ZnmjENqUlLCjcawto"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<blockquote class="text-lg font-light leading-relaxed mb-6 italic">"The AI recommendations actually work. It found a turf 5 minutes from my house I didn't even know existed."</blockquote>
+<div class="mt-auto flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-bold font-headline">James Chen</p>
+<p class="text-xs text-on-surface-variant">Weekly Player • Downtown United</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card rounded-[2.5rem] overflow-hidden p-8 flex flex-col group relative">
+<div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30 flex items-center gap-1.5 z-10">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Verified Review</span>
+</div>
+<div class="mb-8 relative rounded-2xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="close up of soccer ball on high definition artificial grass with field lights in soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnWq1PpFx9k8faWW6PyZl4GTz8vqS4wufbuDO-5smOOxclG8XzhtjBxAT_-tNv_dYCvvrmYbkGaeKsffNmTYuD_LYq5Rozsk8RxqnW7lia3jRjBECaSKCfVVmOvNh3xFTEv-P72EHd3DG3Xotp-zFiODxh8IE4s6bKW9Vu6srcpjOzDooC1nU6iuAXgHABLI7KW0X6tqFoUiEz8pXKW-DsrOSYrlGMhmKdJltQVd-BBPXsM2frZQljs9T2qdzdcIeNvN8ooCUM_HM"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<blockquote class="text-lg font-light leading-relaxed mb-6 italic">"As a pitch owner, the management dashboard is a game-changer. My utilization rate has jumped by 40%."</blockquote>
+<div class="mt-auto flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-bold font-headline">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">Owner • Santiago Sports Arena</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-[#22262f]/10 tonal-shift bg-[#10131a]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-[#00FF94]">TurfBooking Pro</div>
+<p class="font-['Manrope'] text-xs text-[#a9abb3] max-w-xs">Building the kinetic future of community sports. The pitch is yours.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Partner with Us</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Careers</a>
+</div>
+<div class="text-[#a9abb3] font-['Manrope'] text-xs">
+                © 2024 TurfBooking Pro. The Kinetic Void.
+            </div>
+</div>
+</footer>
+</body></html>

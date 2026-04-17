@@ -1,0 +1,4 @@
+.env
+.stitch_turfbooking_pro_saas_prototype/
+node_modules/
+**/node_modules/

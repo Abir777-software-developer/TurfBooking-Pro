@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Turf Owner Registration | TurfBooking Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#006437",
+                        "surface-dim": "#0b0e14",
+                        "on-primary-fixed-variant": "#006638",
+                        "background": "#0b0e14",
+                        "tertiary-fixed-dim": "#d97dff",
+                        "on-tertiary-fixed-variant": "#600083",
+                        "on-secondary-fixed": "#003a48",
+                        "on-secondary-fixed-variant": "#00586d",
+                        "surface-container": "#161a21",
+                        "surface-bright": "#282c36",
+                        "surface-container-high": "#1c2028",
+                        "surface": "#0b0e14",
+                        "on-primary-fixed": "#004624",
+                        "error": "#ff716c",
+                        "inverse-primary": "#006e3c",
+                        "secondary-container": "#00677f",
+                        "inverse-surface": "#f9f9ff",
+                        "on-surface-variant": "#a9abb3",
+                        "on-primary-container": "#005b31",
+                        "tertiary-fixed": "#e192ff",
+                        "surface-container-low": "#10131a",
+                        "error-dim": "#d7383b",
+                        "on-surface": "#ecedf6",
+                        "secondary-fixed-dim": "#37d4ff",
+                        "primary-fixed-dim": "#00ed89",
+                        "on-tertiary": "#390050",
+                        "outline": "#73757d",
+                        "primary-fixed": "#00fd93",
+                        "secondary-fixed": "#80deff",
+                        "tertiary": "#d674ff",
+                        "on-secondary": "#004050",
+                        "tertiary-container": "#be0dff",
+                        "on-tertiary-container": "#000000",
+                        "tertiary-dim": "#bb00fc",
+                        "surface-container-highest": "#22262f",
+                        "secondary": "#00cffc",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-fixed": "#2c003f",
+                        "on-background": "#ecedf6",
+                        "on-error": "#490006",
+                        "primary-dim": "#00ed89",
+                        "surface-variant": "#22262f",
+                        "outline-variant": "#45484f",
+                        "surface-tint": "#a2ffbf",
+                        "error-container": "#9f0519",
+                        "secondary-dim": "#00c0ea",
+                        "on-error-container": "#ffa8a3",
+                        "inverse-on-surface": "#52555c",
+                        "primary-container": "#00fd93",
+                        "primary": "#a2ffbf",
+                        "on-secondary-container": "#eef9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(34, 38, 47, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(69, 72, 79, 0.15);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #a2ffbf 0%, #00cffc 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 8px 2px rgba(0, 207, 252, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl no-border bg-gradient-to-b from-[#0b0e14] to-transparent shadow-2xl shadow-black/20">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black text-[#00FF94] tracking-tighter font-headline">TurfBooking Pro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all" href="#">Find Turf</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all" href="#">Leagues</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all" href="#">About</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#a9abb3] hover:text-[#a2ffbf] transition-all" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-full font-headline text-sm font-bold transition-all scale-95 active:scale-90 text-[#a9abb3] hover:text-[#00FF94]">Sign In</button>
+<button class="px-6 py-2 rounded-full kinetic-gradient text-on-primary font-headline text-sm font-bold transition-all scale-95 active:scale-90 shadow-[0_0_15px_rgba(162,255,191,0.3)]">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Section -->
+<main class="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
+<!-- Ambient Background Textures -->
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] -z-10"></div>
+<div class="max-w-4xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline text-5xl md:text-6xl font-black tracking-tighter mb-4 leading-tight">
+                    Partner with the <br/><span class="text-primary italic">Kinetic Void</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-xl">Join the elite network of professional turf owners. Fast-track your registration in three seamless steps.</p>
+</div>
+<!-- Form Container -->
+<div class="glass-card rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-4 mb-12">
+<div class="flex flex-col gap-2 flex-1">
+<div class="h-1 bg-primary rounded-full"></div>
+<span class="text-[10px] font-headline font-bold text-primary uppercase tracking-widest">Personal Details</span>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<div class="h-1 bg-surface-container-highest rounded-full"></div>
+<span class="text-[10px] font-headline font-bold text-on-surface-variant uppercase tracking-widest">Turf Info</span>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<div class="h-1 bg-surface-container-highest rounded-full"></div>
+<span class="text-[10px] font-headline font-bold text-on-surface-variant uppercase tracking-widest">Verification</span>
+</div>
+</div>
+<form class="space-y-12">
+<!-- Step 1: Personal Info -->
+<section>
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="text-tertiary">01</span> Personal Information
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Full Name</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Email Address</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="john@kineticvoid.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Phone Number</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 2: Turf Details -->
+<section>
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="text-tertiary">02</span> Turf Identity
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-3 space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Turf Name</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="The Kinetic Arena" type="text"/>
+</div>
+</div>
+<div class="md:col-span-3 space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Road / Street</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="123 Performance Way" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">City</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="Neo City" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant ml-1">Pincode</label>
+<div class="bg-surface-container-lowest p-1 rounded-xl focus-within:ring-1 ring-secondary/50 transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface px-4 py-3 placeholder:text-outline-variant font-medium" placeholder="90210" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: KYC Upload -->
+<section>
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="text-tertiary">03</span> KYC Verification
+                        </h2>
+<div class="border-2 border-dashed border-outline-variant rounded-2xl p-12 text-center bg-surface-container-lowest/30 hover:bg-surface-container-lowest/50 transition-colors group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+</div>
+<h3 class="font-headline text-lg font-bold mb-2">Upload Legal Documentation</h3>
+<p class="text-on-surface-variant text-sm mb-6">Drag and drop your business license or ownership deeds (PDF, JPG up to 10MB)</p>
+<button class="text-sm font-bold font-headline py-3 px-8 rounded-full border border-outline-variant hover:border-primary transition-colors" type="button">Select Files</button>
+</div>
+</section>
+<!-- Form CTA -->
+<div class="pt-8 border-t border-outline-variant/10">
+<button class="w-full py-6 rounded-full kinetic-gradient text-on-primary font-headline text-xl font-black tracking-tight transition-all scale-[0.98] hover:scale-100 active:scale-95 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex items-center justify-center gap-4" type="submit">
+                            Register Your Turf
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] text-on-surface-variant mt-6 uppercase tracking-widest">By registering, you agree to our <a class="text-primary hover:underline" href="#">Terms of Service</a></p>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Side Decoration (Bleeding Element) -->
+<div class="fixed top-1/2 -right-24 -translate-y-1/2 opacity-20 hidden lg:block select-none pointer-events-none">
+<h2 class="font-headline text-[14rem] font-black tracking-tighter vertical-text leading-none text-outline-variant/20 uppercase">KINETIC</h2>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0b0e14] w-full border-t border-[#22262f]/10 tonal-shift bg-[#10131a]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-[1440px] mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-xl font-bold text-[#00FF94] font-headline">TurfBooking Pro</div>
+<p class="font-['Manrope'] text-xs text-[#a9abb3] max-w-[200px] text-center md:text-left">Elevate your venue management with the orbital power of Kinetic Void.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Partner with Us</a>
+<a class="font-['Manrope'] text-xs text-[#a9abb3] hover:text-[#00FF94] transition-colors" href="#">Careers</a>
+</div>
+<div class="font-['Manrope'] text-xs text-[#a9abb3]">© 2024 TurfBooking Pro. The Kinetic Void.</div>
+</div>
+</footer>
+</body></html>
